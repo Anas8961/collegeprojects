@@ -1,0 +1,45 @@
+create table product (
+VIN Varchar(17) Primary Key,
+brand  Varchar(20),
+model varchar2(20),
+modelyear  decimal(4),
+color  Varchar(10),
+p_price  decimal,
+serialnumber  Varchar2(6) References supplyorder,
+W_name  Varchar(20) References warehouse,
+IC_name  Varchar(50) References Insurance company,
+I_price decimal,
+I_percentage number,
+I_Days number,
+I_Sdate date,
+);
+insert into product values ('JH4KA3170LC006787',2006,'hyundai','red',455000,'bQDZof','b01','Misr Insurance',16000,100,1095,20-10-2014);
+insert into product values ('1GNDT13W3W2249640',2010,'toyota','blue',385000,'kVfWfn','b02','Misr Life Insurance Company',9400,70,1095,17-3-2012);
+insert into product values ('JH4DB1550LS000111',2014,'mercedes ','purple ',1953000,'MRpwyr','b01','Allianz Life Egypt',76000,95,1095,3-2-2016);
+insert into product values ('1NPTXUEXX8N766170',2008,'nissan','white',164000,'ruUTve','b03','Metlife Egypt',5400,85,1095,5-8-2010);
+insert into product values ('JH4DA3350GS005185',2012,'porsche','black',2000000,'NC65HL','b02','AXA Life Egypt',80000,100,1095,6-20-2013);
+insert into product values ('JH4DC2380SS000012',2019,'suzuki','green',230000,'GnoxVx','b04','GIG Egypt',4600,55,1095,5-1-2020);
+insert into product values ('1G1BU51H2HX113345',2016,'hyundai','yellow',360000,'az4xJJ','b03','Bupa Egypt',9000,60,1095,7-7-2018);
+insert into product values ('WBAAM3349YFP79879',2021,'mercedes','white',1600000,'GCbAbs','b04','AXA Insurance',650000,100,1095,4-3-2021);
+insert into product values ('2G1WD57C491198247',2022,'bmw','white',1300000,'Tn9iJ9','b02','Suez Canal Insurance',50000,100,1095,2-12-2022);
+insert into product values ('1FDWE35SX5HA40825',2015,'toyota','red',285000,'N6iVPg','b04','Allianz Insurance Egypt',8200,80,1095,4-1-2017);
+
+create table warehouse(
+w_name Varchar2(20) Primary Key,
+w_address varchar2(50),
+);
+insert into warehouse values('b01','nasr city');
+insert into warehouse values('b02','el obour');
+insert into warehouse values('b03','Sheikh Zayed City');
+insert into warehouse values('b04','Masr Al Jadidah');
+insert into warehouse values('b05','Madinaty');
+insert into warehouse values('b06','Future City');
+insert into warehouse values('b07','nasr city');
+insert into warehouse values('b08','Madinaty');
+insert into warehouse values('b09','Sheikh Zayed City');
+insert into warehouse values('b10','Masr Al Jadidah');
+create table supplyorder(
+serialnumber Varchar(6) Primary Key,
+so_date date,
+V_name varchar2(20) References vendor
+);
