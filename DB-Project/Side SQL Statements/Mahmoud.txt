@@ -1,0 +1,64 @@
+create table vendor(V_name Varchar(20) Primary key,
+V_email varchar(20),
+V_number number);
+
+insert into vendor(V_name,V_email,V_number) values ('Chevrolet','a111@gmail.com',01029495310);
+insert into vendor(V_name,V_email,V_number) values ('Kia','a112@gmailcom',01029495311);
+insert into vendor(V_name,V_email,V_number) values ('Peugeot','a113@gmail.com',01029495312);
+insert into vendor(V_name,V_email,V_number) values ('Hyundai','a121@gmail.com',01029495313);
+insert into vendor(V_name,V_email,V_number) values ('Fiat','a122@gmail.com',01029495314);
+insert into vendor(V_name,V_email,V_number) values ('Opel','a123@gmail.com',01029495315);
+insert into vendor(V_name,V_email,V_number) values ('DS','a131@gmail.com',01029495316);
+insert into vendor(V_name,V_email,V_number) values ('BYD','a132@gmail.com',01029495317);
+insert into vendor(V_name,V_email,V_number) values ('Renault','a133@gmail.com',01029495318);
+insert into vendor(V_name,V_email,V_number) values ('Toyota','a211@gmail.com',01029495319);
+
+
+create table Insurance_Company(
+IC_name varchar2(50) Primary Key,
+IC_email VARCHAR2(50),
+IC_number number
+);
+
+insert into Insurance_Company(IC_name,IC_email,IC_number) values ('Misr Insurance','a212@gmail.com',01029495320);
+insert into Insurance_Company(IC_name,IC_email,IC_number) values ('Misr Life Insurance Company','a213@gmail.com',01029495321);
+insert into Insurance_Company(IC_name,IC_email,IC_number) values ('Allianz Life Egypt','a221@gmail.com',01029495322);
+insert into Insurance_Company(IC_name,IC_email,IC_number) values ('Metlife Egypt','a222@gmail.com',01029495323);
+insert into Insurance_Company(IC_name,IC_email,IC_number) values ('AXA Life Egypt','a223@gmail.com',01029495324);
+insert into Insurance_Company(IC_name,IC_email,IC_number) values ('GIG Egypt','a231@gmail.com',01029495325);
+insert into Insurance_Company(IC_name,IC_email,IC_number) values ('Bupa Egypt','a232@gmail.com',01029495326);
+insert into Insurance_Company(IC_name,IC_email,IC_number) values ('AXA Insurance','a233@gmail.com',01029495327);
+insert into Insurance_Company(IC_name,IC_email,IC_number) values ('Suez Canal Insurance','a311@gmail.com',01029495328);
+insert into Insurance_Company(IC_name,IC_email,IC_number) values ('Allianz Insurance Egypt','a312@gmail.com',01029495329);
+
+create table Client(
+C_SSN NUMBER(12) Primary Key,
+C_name VARCHAR2(20),
+C_number NUMBER,
+C_adress VARCHAR2(20),
+C_email VARCHAR2(40)
+);
+
+insert into Client(SSN,C_name,C_number,C_adress,C_email) values (896225676768 ,'Lynn',01029495330,'Nasr city','a313@gmail.com');
+insert into Client(SSN,C_name,C_number,C_adress,C_email) values (948375838636 ,'Taylor',01029495331,'Masr Al Jadidah','a321@gmail.com');
+insert into Client(SSN,C_name,C_number,C_adress,C_email) values (875385532839 ,'Ollie',01029495332,'Sheraton','a322@gmail.com');
+insert into Client(SSN,C_name,C_number,C_adress,C_email) values (239825936467 ,'Ferguson',01029495333,'el Obour','a323@gmail.com');
+insert into Client(SSN,C_name,C_number,C_adress,C_email) values (263294287373 ,'Jose',01029495334,'El Shorouk','a331@gmail.com');
+insert into Client(SSN,C_name,C_number,C_adress,C_email) values (979836682225 ,'Rogers',01029495335,'New Cairo','a332@gmail.com');
+insert into Client(SSN,C_name,C_number,C_adress,C_email) values (264685396244 ,'Seth',01029495336,'Helwan','a33@.gmail.com');
+insert into Client(SSN,C_name,C_number,C_adress,C_email) values (435325738254 ,'Kelly',01029495337,'6th October','a114@gmail.com');
+insert into Client(SSN,C_name,C_number,C_adress,C_email) values (456232888977 ,'Nichole',01029495338,'Sheikh Zayed city','a115@gmail.com');
+insert into Client(SSN,C_name,C_number,C_adress,C_email) values (358275756469 ,'Diaz',01029495339,'Giza','a116@gmail.com');
+
+create table Addresses(
+V_name varchar(20) References Vendor,
+Addresses varchar(20),
+constraint Addressespk primary key (V_name,Addresses)
+);
+
+create table Payment_method(
+C_SSN NUMBER(12) References Client,
+Payment_method VARCHAR2(20),
+constraint Payment_methodpk primary key(C_SSN,Payment_method)
+);
+
