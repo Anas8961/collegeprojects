@@ -1,0 +1,12 @@
+=> Team Members
+Youssef Moustafa 20104848
+Khaled Alaa 20108424
+Mahmoud Ahmed 20104039
+Anas Magdy 20104847
+
+=> Project Details
+Name: Holiday Decorations!
+Link: https://www.hackerearth.com/practice/data-structures/queues/basics-of-queues/practice-problems/algorithm/holiday-decorations-b53daa12/
+Used Methods:
+- Adjacency List Graph
+- List (STL)
